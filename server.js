@@ -13,8 +13,11 @@ connectDB();
 // route files
 const bootcamps = require("./routes/bootcamps");
 
-const app = express();
 const PORT = process.env.PORT || 5000;
+const app = express();
+
+// Body parser
+app.use(express.json());
 
 // @dev     Logging middleware
 if (process.env.NODE_ENV === "development") {
